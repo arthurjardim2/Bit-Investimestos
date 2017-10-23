@@ -32,18 +32,17 @@ namespace IFinancas.View
         {
             _viewModel = new PageListaContasViewModel();
             BindingContext = _viewModel;
-        }
-
-        private void ActExcluir_Clicked(object sender, EventArgs e)
-        {
-            var c = (((MenuItem)sender).CommandParameter) as Conta;
-            _viewModel.Excluir(c);
-            Atualizar();
-        }
+        }       
 
         private void ActEditar_Clicked(object sender, EventArgs e)
         {
             var c = (((MenuItem)sender).CommandParameter) as Conta;
+            Navigation.PushAsync(new PageConta(this, c));
+        }
+
+        private void ListaContas_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var c = e.Item as Conta;
             Navigation.PushAsync(new PageConta(this, c));
         }
     }

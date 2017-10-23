@@ -54,6 +54,7 @@
     <Compile Include="ViewModel\PageContaViewModel.cs" />
     <Compile Include="ViewModel\PageListaContasViewModel.cs" />
     <Compile Include="ViewModel\PageListaTransacoesViewModel.cs" />
+    <Compile Include="ViewModel\PageTransacaoViewModel.cs" />
     <Compile Include="View\PageConfiguracoes.xaml.cs">
       <DependentUpon>PageConfiguracoes.xaml</DependentUpon>
     </Compile>

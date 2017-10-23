@@ -4,6 +4,7 @@
              x:Class="IFinancas.View.PageConta">
     <ContentPage.Content>
         <StackLayout>
+            <Button Text="Excluir" Clicked="ActExcluir_Clicked" HorizontalOptions="EndAndExpand"/>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Descrição" VerticalOptions="Center"/>
                 <Entry Placeholder="Descrição da Conta" HorizontalOptions="FillAndExpand" Text="{Binding Descricao}"/>

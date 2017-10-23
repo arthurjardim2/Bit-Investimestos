@@ -38,8 +38,6 @@ namespace IFinancas.ViewModel
             Descricao = conta.Descricao;
             Tipo = (int)conta.Tipo;
             _incluindo = false;
-
-            
         }
 
         public PageContaViewModel()
@@ -48,7 +46,7 @@ namespace IFinancas.ViewModel
 
             Conta = new Conta();
             Tipo = (int)TipoConta.TesouroDireto;
-            _incluindo = true;            
+            _incluindo = true;
         }
 
         public void Salvar()
@@ -65,7 +63,16 @@ namespace IFinancas.ViewModel
             {
                 dao.Salvar(Conta);
             }
+        }
 
+        public void Excluir()
+        {
+            if (Conta.Id > 0)
+            {
+                var dao = new ContaDAO();
+                dao.Excluir(Conta);
+            }
         }
     }
+
 }

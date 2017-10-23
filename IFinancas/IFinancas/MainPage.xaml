@@ -9,6 +9,8 @@
                     Clicked="BtnConfiguracoes_Clicked"/>
             <Button x:Name="BtnContas" Text="Cadastrar Contas" HorizontalOptions="CenterAndExpand" 
                     Clicked="BtnContas_Clicked"/>
+            <Button x:Name="BtnTransacoes" Text="Lançamentos" HorizontalOptions="CenterAndExpand" 
+                    Clicked="BtnTransacoes_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

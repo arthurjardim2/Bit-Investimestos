@@ -5,7 +5,8 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Informe a Conta"/>
+                <Button Text="Novo" Clicked="BtnNovo_Clicked"/>
+                <Label Text="Conta"/>
                 <Picker Title="Contas" HorizontalOptions="FillAndExpand" 
                         ItemsSource="{Binding ContasStr}" SelectedIndex="{Binding ContaIndex}"/>
             </StackLayout>

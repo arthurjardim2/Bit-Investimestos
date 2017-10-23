@@ -6,20 +6,19 @@
         <StackLayout Margin="10">
             <StackLayout Orientation="Horizontal">
                 <Label Text="Contas" FontSize="Large" VerticalOptions="Center"/>
-                <Button x:Name="BtnAddConta" HorizontalOptions="EndAndExpand" Text="Add" Clicked="BtnAddConta_Clicked"/>
+                <Button x:Name="BtnAddConta" HorizontalOptions="EndAndExpand" Text="Novo" Clicked="BtnAddConta_Clicked"/>
             </StackLayout>
 
-            <ListView x:Name="ListaContas" ItemsSource="{Binding Contas}" >
+            <ListView x:Name="ListaContas" ItemsSource="{Binding Contas}" ItemTapped="ListaContas_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.ContextActions>
-                                <MenuItem Text="Excluir" CommandParameter="{Binding .}" Clicked="ActExcluir_Clicked"/>
                                 <MenuItem Text="Editar" CommandParameter="{Binding .}" Clicked="ActEditar_Clicked"/>
                             </ViewCell.ContextActions>
-                            <StackLayout>
-                                <Label Text="{Binding Descricao}"/>
-
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Descricao}" VerticalOptions="Center"/>
+                                <Label Text="{Binding Tipo}" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

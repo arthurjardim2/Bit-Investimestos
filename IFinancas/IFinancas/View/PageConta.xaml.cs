@@ -43,5 +43,16 @@ namespace IFinancas.View
             Navigation.PopAsync();
             _PageLista.Atualizar();
         }
+
+        private async void ActExcluir_Clicked(object sender, EventArgs e)
+        {
+            var resp = await DisplayAlert("Atenção", "Confirma Exclusão", "Sim", "Não");            
+            if (resp)
+            {
+                _viewModel.Excluir();
+                await Navigation.PopAsync();
+                _PageLista.Atualizar();
+            }            
+        }
     }
 }

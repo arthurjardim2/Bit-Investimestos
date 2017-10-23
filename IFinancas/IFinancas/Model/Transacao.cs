@@ -32,9 +32,7 @@ namespace IFinancas.Model
 
         public double Valor { get; set; }
 
-        public int IdConta { get; set; }
-
-        public Conta Conta { get; set; }
+        public int IdConta { get; set; }        
 
         public Operacao Operacao { get; set; }
 

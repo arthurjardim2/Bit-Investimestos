@@ -31,13 +31,14 @@ namespace IFinancas.ViewModel
 
         public PageListaTransacoesViewModel()
         {
-            CarregarContas();
+            Transacoes = new List<Transacao>();
+            CarregarContas();            
         }
 
         private void CarregarContas()
         {
             var contaDAO = new ContaDAO();
-            var Contas = contaDAO.GetAll().ToList();
+            Contas = contaDAO.GetAll().ToList();
             ContasStr = new List<string>();
 
             foreach (var c in Contas)
@@ -48,9 +49,12 @@ namespace IFinancas.ViewModel
 
         public void CarregarLista()
         {
-            var dao = new TransacaoDAO();
-            Conta = Contas[ContaIndex];
-            Transacoes = dao.GetAll().Where(t => t.IdConta == Conta.Id).ToList();
+            if (ContaIndex >= 0)
+            {
+                var dao = new TransacaoDAO();
+                Conta = Contas[ContaIndex];
+                Transacoes = dao.GetAll().Where(t => t.IdConta == Conta.Id).ToList();
+            }            
         }
 
         public void Excluir(Transacao t)
