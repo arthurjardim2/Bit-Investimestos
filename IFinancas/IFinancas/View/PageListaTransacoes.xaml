@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IFinancas.View.PageListaTransacoes">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Informe a Conta"/>
+                <Picker Title="Contas" HorizontalOptions="FillAndExpand" 
+                        ItemsSource="{Binding ContasStr}" SelectedIndex="{Binding ContaIndex}"/>
+            </StackLayout>
+            <ListView x:Name="ListaTransacoes" ItemsSource="{Binding Transacoes}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Excluir" CommandParameter="{Binding .}" Clicked="ActExcluir_Clicked"/>
+                                <MenuItem Text="Editar" CommandParameter="{Binding .}" Clicked="ActEditar_Clicked"/>
+                            </ViewCell.ContextActions>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Operacao}"/>
+                                <Label Text="{Binding Data}"/>
+                                <Label Text="{Binding Valor}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

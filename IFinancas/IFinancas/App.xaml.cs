@@ -12,8 +12,8 @@ namespace IFinancas
         public App()
         {
             InitializeComponent();
-
-            MainPage = new IFinancas.MainPage();
+            
+            MainPage = new NavigationPage(new IFinancas.MainPage());
         }
 
         protected override void OnStart()

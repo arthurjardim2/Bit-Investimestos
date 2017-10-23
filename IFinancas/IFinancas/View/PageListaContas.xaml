@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IFinancas.View.PageListaContas">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Contas" FontSize="Large" VerticalOptions="Center"/>
+                <Button x:Name="BtnAddConta" HorizontalOptions="EndAndExpand" Text="Add" Clicked="BtnAddConta_Clicked"/>
+            </StackLayout>
+
+            <ListView x:Name="ListaContas" ItemsSource="{Binding Contas}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Excluir" CommandParameter="{Binding .}" Clicked="ActExcluir_Clicked"/>
+                                <MenuItem Text="Editar" CommandParameter="{Binding .}" Clicked="ActEditar_Clicked"/>
+                            </ViewCell.ContextActions>
+                            <StackLayout>
+                                <Label Text="{Binding Descricao}"/>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

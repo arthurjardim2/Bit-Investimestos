@@ -5,9 +5,10 @@
              x:Class="IFinancas.MainPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="BtnConfiguracoes" Text="Configurações" HorizontalOptions="CenterAndExpand" 
+                    Clicked="BtnConfiguracoes_Clicked"/>
+            <Button x:Name="BtnContas" Text="Cadastrar Contas" HorizontalOptions="CenterAndExpand" 
+                    Clicked="BtnContas_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

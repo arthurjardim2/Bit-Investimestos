@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IFinancas.View.PageConta">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Descrição" VerticalOptions="Center"/>
+                <Entry Placeholder="Descrição da Conta" HorizontalOptions="FillAndExpand" Text="{Binding Descricao}"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Tipo" VerticalOptions="Center" />
+                <Picker x:Name="EdtTipo" Title="Tipo de Conta" HorizontalOptions="FillAndExpand" 
+                        ItemsSource="{Binding TiposStr}" SelectedIndex="{Binding Tipo}"/>
+            </StackLayout>
+
+            <Button x:Name="BtnSalvar" Text="Salvar" Clicked="BtnSalvar_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

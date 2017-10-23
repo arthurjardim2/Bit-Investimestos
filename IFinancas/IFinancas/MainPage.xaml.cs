@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IFinancas.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,16 @@ namespace IFinancas
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void BtnConfiguracoes_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageConfiguracoes());
+        }
+
+        private void BtnContas_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new PageListaContas());
         }
     }
 }
