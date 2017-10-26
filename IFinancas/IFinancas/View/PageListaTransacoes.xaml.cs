@@ -41,5 +41,13 @@ namespace IFinancas.View
         {
             Navigation.PushAsync(new PageTransacao(this, _viewModel.Conta));
         }
+
+        private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (_viewModel != null)
+            {
+                _viewModel.CarregarLista();                
+            }
+        }
     }
 }

@@ -6,18 +6,18 @@
         <StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Data"/>
-                <DatePicker Format="dd/MM/yyyy" Date="{Binding Data}"/>
+                <DatePicker Format="dd/MM/yyyy" Date="{Binding Data}" HorizontalOptions="FillAndExpand"/>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Operação"/>
                 <Picker Title="Operação" HorizontalOptions="FillAndExpand" 
-                        ItemsSource="{Binding OperacaoStr}" SelectedIndex="{Binding OperacaoIndex}"/>
+                        ItemsSource="{Binding OperacoesStr}" SelectedIndex="{Binding OperacaoIndex}"/>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Valor"/>
-                <Entry Keyboard="Numeric" Placeholder="Valor" Text="{Binding Valor}"/>
+                <Entry Keyboard="Numeric" Placeholder="Valor" Text="{Binding Valor}" HorizontalOptions="FillAndExpand"/>
             </StackLayout>
             <Button Text="Salvar" Clicked="BtnSalvar_Clicked"/>
         </StackLayout>

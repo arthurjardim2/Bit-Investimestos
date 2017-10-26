@@ -11,6 +11,8 @@
                     Clicked="BtnContas_Clicked"/>
             <Button x:Name="BtnTransacoes" Text="Lançamentos" HorizontalOptions="CenterAndExpand" 
                     Clicked="BtnTransacoes_Clicked"/>
+            <Button x:Name="BtnTeste" Text="Teste" HorizontalOptions="CenterAndExpand" 
+                    Clicked="BtnTeste_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

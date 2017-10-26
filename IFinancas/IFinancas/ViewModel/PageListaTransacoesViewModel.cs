@@ -2,6 +2,7 @@
 using IFinancas.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace IFinancas.ViewModel
 {
     public class PageListaTransacoesViewModel
     {
-        public IList<Transacao> Transacoes { get; set; }
+        public ObservableCollection<Transacao> Transacoes { get; set; }
 
         public IList<Conta> Contas { get; set; }
 
@@ -31,7 +32,7 @@ namespace IFinancas.ViewModel
 
         public PageListaTransacoesViewModel()
         {
-            Transacoes = new List<Transacao>();
+            Transacoes = new ObservableCollection<Transacao>();
             CarregarContas();            
         }
 
@@ -53,7 +54,12 @@ namespace IFinancas.ViewModel
             {
                 var dao = new TransacaoDAO();
                 Conta = Contas[ContaIndex];
-                Transacoes = dao.GetAll().Where(t => t.IdConta == Conta.Id).ToList();
+                var lista = dao.GetAll().Where(t => t.IdConta == Conta.Id).ToList();
+                Transacoes.Clear();
+                foreach (var item in lista)
+                {
+                    Transacoes.Add(item);
+                }
             }            
         }
 

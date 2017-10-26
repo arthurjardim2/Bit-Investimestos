@@ -60,6 +60,7 @@ namespace IFinancas.ViewModel
             Transacao.Operacao = Operacao.Deposito;
             Transacao.Valor = 0;
             Transacao.IdConta = c.Id;
+            
             Preparar();
         }
 
@@ -79,6 +80,7 @@ namespace IFinancas.ViewModel
             };
 
             OperacaoIndex = (int)Transacao.Operacao;
+            _data = Transacao.Data;
         }
 
         public void Salvar()

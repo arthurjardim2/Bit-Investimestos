@@ -3,13 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IFinancas.View.PageListaTransacoes">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="5">
             <StackLayout Orientation="Horizontal">
-                <Button Text="Novo" Clicked="BtnNovo_Clicked"/>
-                <Label Text="Conta"/>
-                <Picker Title="Contas" HorizontalOptions="FillAndExpand" 
-                        ItemsSource="{Binding ContasStr}" SelectedIndex="{Binding ContaIndex}"/>
+                <Label Text="Conta" FontSize="Large" FontAttributes="Bold" VerticalOptions="Center" 
+                       HorizontalOptions="StartAndExpand"/>
+                <Button Text="Add" Clicked="BtnNovo_Clicked" HorizontalOptions="End"/>
             </StackLayout>
+            
+            <Picker Title="Contas" HorizontalOptions="FillAndExpand" 
+                        ItemsSource="{Binding ContasStr}" SelectedIndex="{Binding ContaIndex}" SelectedIndexChanged="Picker_SelectedIndexChanged"/>
+            
+            <Label Text="Transações" FontAttributes="Bold" HorizontalOptions="StartAndExpand"/>
+            
             <ListView x:Name="ListaTransacoes" ItemsSource="{Binding Transacoes}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -19,9 +24,9 @@
                                 <MenuItem Text="Editar" CommandParameter="{Binding .}" Clicked="ActEditar_Clicked"/>
                             </ViewCell.ContextActions>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Operacao}"/>
-                                <Label Text="{Binding Data}"/>
-                                <Label Text="{Binding Valor}"/>
+                                <Label Text="{Binding Operacao}" VerticalOptions="Center"/>
+                                <Label Text="{Binding Data}" VerticalOptions="Center"/>
+                                <Label Text="{Binding Valor}" VerticalOptions="Center"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

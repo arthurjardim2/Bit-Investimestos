@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IFinancas.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,9 @@ namespace IFinancas
         public App()
         {
             InitializeComponent();
-            
-            MainPage = new NavigationPage(new IFinancas.MainPage());
+
+            //MainPage = new NavigationPage(new IFinancas.MainPage());
+            MainPage = new MasterDetailPage01();
         }
 
         protected override void OnStart()

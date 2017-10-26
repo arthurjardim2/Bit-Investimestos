@@ -29,5 +29,10 @@ namespace IFinancas
         {
             Navigation.PushAsync(new PageListaTransacoes());
         }
+
+        private void BtnTeste_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MasterDetailPage01());
+        }
     }
 }
